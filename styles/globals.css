@@ -6,109 +6,17 @@
   box-sizing: inherit;
 }
 
-:root {
-  --font-family-one: "Montserrat", sans-serif;
-  --font-family-two: sans-serif;
-  --color-primary: #201021;
-  --color-secondary: #eee3d9;
-  --color-tertiary: #ff825a;
-  --color-fourth: #0b2749;
-}
-
-html {
-  font-family: var(--font-family-one), sans-serif;
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
-body {
-  box-sizing: border-box;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0;
-  margin: 0;
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-}
-
-a {
-  font-family: var(--font-family-one), sans-serif;
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-}
-
-nav ul {
-  list-style: none;
-}
-
-button {
-  font-family: var(--font-family-one), sans-serif;
-  width: auto;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-input,
-textarea,
-button,
-select,
-a {
-  -webkit-tap-highlight-color: var(--color-tertiary);
-}
-
-p {
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: normal;
-}
-
-span {
-  color: inherit;
-}
-
 .content {
   display: grid;
   justify-content: stretch;
   align-items: stretch;
 }
 
-.parent-box {
+.parent-box2 {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: minmax(52rem, 100vh);
   align-content: stretch;
   align-items: stretch;
-  /*  background-color: #2daeb02c; */
-}
-
-.box-1 {
-  display: grid;
-  /*  background-color: #ff835a51; */
-}
-
-.box-2 {
-  display: grid;
-  /*  grid-template-rows: minmax(30rem, max(50rem, 100vh, 90rem)); */
-  grid-template-rows: 100vh;
-  /*  background-color: #ff835a65; */
-}
-
-.w-bg {
-  display: grid;
-  justify-self: start;
-  /* background-color: #ff835a65; */
-}
-
-.w-bg img {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  justify-self: start;
-  object-fit: contain;
-  object-position: left;
+  background-color: #2daeb02c;
 }
