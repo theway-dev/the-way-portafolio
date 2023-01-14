@@ -8,7 +8,15 @@ import TestResponsive from "../components/testResponsive/TestResponsive";
 import { device } from "../styles/styled-comp/media-querys";
 
 const LogoTheWay = styled.img`
-  width: 29rem;
+  width: 43rem;
+
+  ${device.phone} {
+    width: 33rem;
+  }
+
+  ${device.miniPhone} {
+    width: 29rem;
+  }
 `;
 
 const ParentBox = styled.div`
@@ -17,6 +25,7 @@ const ParentBox = styled.div`
   grid-template-columns: minmax(91rem, 2fr);
   align-content: stretch;
   align-items: stretch;
+  position: relative;
 
   ${device.betweenPcAndTabPort2} {
     grid-template-columns: 1fr;
@@ -34,15 +43,20 @@ const Box1 = styled.div`
 `;
 
 const Box2 = styled.div`
+  width: 100vw;
+  height: 100vh;
   display: grid;
-
-  ${device.betweenPcAndTabPort2} {
-    grid-row: 1 / 2;
-  }
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /*   backdrop-filter: blur(30px); */
+  top: 0;
+  left: 0;
 `;
 
 const WBackgroung = styled.figure`
   display: grid;
+  grid-template-rows: minmax(min-content, 100vh);
   justify-self: start;
 
   ${device.betweenPcAndTabPort2} {
@@ -78,15 +92,21 @@ export default function Home() {
           <TestResponsive />
           <div className="content">
             <ParentBox className="parent-box">
-              <Box1>
+              {/*   <Box1>
                 <WBackgroung className="w-bg">
                   <img src="/w-bg1.svg" alt="Brand Strategy & Design Studio" />
                 </WBackgroung>
               </Box1>
+ */}
+              <Box2>
+                <LogoTheWay
+                  src="/logo-circle-1.svg"
+                  alt="Logo The Way Brand Strategy & Design Studio"
+                />
+              </Box2>
 
               {/*  <Box2 className="box-1">
-                <LogoTheWay src="/logo-theway-2.svg" alt="Logo The Way" />
-                <p>We're fixing this website</p>
+                <LogoTheWay src="/logo-circle-1.svg" alt="Logo The Way" />
               </Box2> */}
             </ParentBox>
           </div>
