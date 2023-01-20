@@ -1,17 +1,23 @@
-import { createGlobalStyle } from "styled-components";
+@forward "./sass/responsive.scss";
 
-export const fontFamily1 = `'Cairo', sans-serif`;
-export const fontFamily2 = `'Space Grotesk', sans-serif`;
-export const fontFamily3 = `'Cormorant', serif`;
+@font-face {
+  font-family: var(--font-family-one);
+  src: url("../public/fonts/britanica-semi-expanded-black.woff2")
+    format("woff2");
+}
 
-export const GlobalStyles = createGlobalStyle`
 :root {
-  --font-family-one: "Montserrat", sans-serif;
+  --font-family-one: Britanica, sans-serif;
   --font-family-two: sans-serif;
   --color-primary: #201021;
   --color-secondary: #eee3d9;
   --color-tertiary: #ff825a;
   --color-fourth: #0b2749;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
 }
 
 *,
@@ -20,15 +26,24 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  font-family: ${fontFamily1};
+  font-family: var(--font-family-one);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 html {
-  font-family: ${fontFamily1};
+  font-family: var(--font-family-one);
   font-size: 62.5%;
   scroll-behavior: smooth;
-}
 
+  @media only screen and (min-width: 2200px) {
+    font-size: 113.5%;
+  }
+}
 
 body {
   box-sizing: border-box;
@@ -39,20 +54,23 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: var(--color-primary);
+  background-color: #e1d6cc;
   color: var(--color-secondary);
+  transition: ease-in-out 0.4s;
+}
+
+$transition-theme: ease-in-out 0.4s;
+
+html[data-theme="dark"] body {
+  background-color: #201021;
+  transition: $transition-theme;
 }
 
 a {
-  &,
-  &:link,
-  &:visited,
-  &:active {
-    font-family: ${fontFamily1};
-    text-decoration: none;
-    color: inherit;
-    outline: none;
-  }
+  color: inherit;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
 
 nav ul {
@@ -60,7 +78,7 @@ nav ul {
 }
 
 button {
-  font-family: ${fontFamily1};
+  font-family: var(--font-family-one);
   width: auto;
   background: transparent;
   border: none;
@@ -76,8 +94,7 @@ a {
   -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
 }
 
-img
-{
+img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -94,7 +111,12 @@ span {
 }
 
 ::selection {
-  background-color:var(--color-tertiary);
+  background-color: var(--color-tertiary);
   color: var(--color-primary);
 }
-`;
+/* 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */

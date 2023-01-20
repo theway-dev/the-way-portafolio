@@ -1,0 +1,126 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == mini-phone {
+    @media only screen and (max-width: 23.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == between-pc-and-tab-port {
+    @media only screen and (max-width: 71.875em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-between-port-land {
+    @media only screen and (max-width: 80em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-between-land-desktop {
+    @media only screen and (max-width: 100em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
+
+.btn-toggle {
+  height: 35px;
+  width: 69px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: ease-in-out 0.5s;
+  position: relative;
+}
+
+.btn-toggle:hover {
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+.btn-toggle:focus,
+.btn-toggle:active {
+  outline: none;
+}
+.btn-toggle::-moz-focus-inner {
+  border: 0;
+}
+
+.btn-toggle-pin {
+  width: 27px;
+  height: 27px;
+  border-radius: 30px;
+  transition: left ease 0.5s;
+  background-color: var(--color-tertiary);
+  position: absolute;
+  transition: ease-in-out 0.35s;
+  left: 6px;
+  top: 4px;
+  z-index: 10;
+}
+.btn-toggle.on {
+  background-color: rgb(250, 250, 250);
+}
+
+.btn-toggle.on .btn-toggle-pin {
+  left: 37px;
+  background-color: var(--color-tertiary);
+}
+
+.btn-toggle-emoji {
+  font-size: 16px;
+  position: absolute;
+  top: 5px;
+  right: 38px;
+  transition: ease-in-out 0.35s;
+  z-index: 5;
+
+  @include respond(phone) {
+    top: 7px;
+  }
+}
+
+.btn-toggle-emoji-left {
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out 0.5s;
+  right: 38px;
+}
+
+.btn-toggle-emoji-right {
+  opacity: 1;
+  visibility: visible;
+  transition: ease-in-out 0.5s;
+  right: 11px;
+}
+
+.btn-toggle.on .btn-toggle-emoji-left {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-toggle.on .btn-toggle-emoji-right {
+  opacity: 0;
+  visibility: hidden;
+}

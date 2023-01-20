@@ -1,5 +1,6 @@
+"use client";
 import { useState } from "react";
-import { ResponsiveStyle } from "./TestResponsive.styled";
+import styles from "./testResponsive.module.scss";
 
 const TestResponsive = () => {
   const [isActive, setIsActive] = useState(true);
@@ -7,18 +8,14 @@ const TestResponsive = () => {
   const handleClick = () => {
     setIsActive(false);
   };
-
   if (isActive) {
     return (
-      <ResponsiveStyle>
+      <div className={styles.res}>
         Test__Responsive
-        <button onClick={handleClick}>
-          <span>X</span>
-        </button>
-      </ResponsiveStyle>
+        <span onClick={handleClick}>X</span>
+      </div>
     );
   }
-
   return null;
 };
 

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Baskerville;
+  src: url("../public/fonts/Baskerville.ttc") format("ttc");
+}
+
+@font-face {
+  font-family: Britanica;
+  src: url("../public/fonts/britanica-semi-expanded-black.woff2")
+    format("woff2");
+}
+
+.testing-3 {
+  font-family: Baskerville;
+  font-size: 3rem;
+  color: hsla(126, 71%, 26%, 0.8);
+}
+.testing-2 {
+  font-family: Britanica;
+  font-size: 2.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: hsla(210, 71%, 26%, 0.8);
+}
