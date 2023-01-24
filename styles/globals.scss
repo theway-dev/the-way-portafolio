@@ -61,9 +61,21 @@ body {
 
 $transition-theme: ease-in-out 0.4s;
 
-html[data-theme="dark"] body {
+@mixin bodyBgDark() {
   background-color: #201021;
   transition: $transition-theme;
+}
+
+html[data-theme="dark"] body {
+  @include bodyBgDark();
+}
+
+[data-theme="dark"] body {
+  @include bodyBgDark();
+}
+
+html.dark-theme body {
+  @include bodyBgDark();
 }
 
 a {

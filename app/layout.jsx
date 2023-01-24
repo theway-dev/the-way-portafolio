@@ -15,7 +15,11 @@ export default function RootLayout({ children }) {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <html lang="en" data-theme={theme}>
+      <html
+        lang="en"
+        data-theme={theme}
+        className={theme === "light" ? "" : "dark-theme"}
+      >
         {/*
         <head /> will contain the components returned by the nearest parent
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head

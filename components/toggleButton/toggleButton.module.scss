@@ -78,6 +78,28 @@
   left: 6px;
   top: 4px;
   z-index: 10;
+
+  //// new not working
+
+  /*  width: 24px;
+  height: 24px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 24px 20px 0 0 #5f43ba;
+
+  &::after {
+    content: "";
+    width: 25px;
+    height: 22px;
+    border-radius: 30px;
+    transition: ease-in-out 0.35s;
+    animation-delay: 0.2s;
+    position: absolute;
+    background-color: #fafafa;
+    left: -9px;
+    top: -3px;
+    opacity: 0;
+  } */
 }
 .btn-toggle.on {
   background-color: rgb(250, 250, 250);
@@ -87,6 +109,14 @@
   left: 37px;
   background-color: var(--color-tertiary);
 }
+
+//// new not working
+
+/* .btn-toggle.on .btn-toggle-pin::after {
+  background-color: rgb(250, 250, 250);
+  opacity: 0;
+  transition: ease-in-out 0.35s;
+} */
 
 .btn-toggle-emoji {
   font-size: 16px;

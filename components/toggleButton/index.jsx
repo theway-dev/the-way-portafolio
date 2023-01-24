@@ -22,7 +22,7 @@ const ToggleButton = ({ theme, toggleTheme }) => {
       onClick={handleOnClick}
     >
       <span className={style["btn-toggle-pin"]}> </span>
-      <span
+      {/* <span
         className={`${style["btn-toggle-emoji"]} ${style["btn-toggle-emoji-left"]}`}
       >
         🌙
@@ -31,7 +31,7 @@ const ToggleButton = ({ theme, toggleTheme }) => {
         className={`${style["btn-toggle-emoji"]} ${style["btn-toggle-emoji-right"]}`}
       >
         &#127773;
-      </span>
+      </span> */}
     </button>
   );
 };
